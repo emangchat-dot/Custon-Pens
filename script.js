@@ -22,8 +22,8 @@ const EMAILJS_TEMPLATE_ID = "template_zmfzgos";
    Do NOT use your secret/service_role key here.
 ===================================================== */
 
-const SUPABASE_URL = "PASTE_YOUR_SUPABASE_URL_HERE";
-const SUPABASE_KEY = "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE";
+const SUPABASE_URL = "https://axqgmordbuolljqzlamx.supabase.co";
+const SUPABASE_KEY = "sb_publishable_zqG8w8VnoWh3qBVM5zLHIA_LWkEeTgK";
 
 
 /* =====================================================
