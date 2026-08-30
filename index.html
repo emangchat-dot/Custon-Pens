@@ -3,22 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Penify — Personalised Pens</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- EmailJS -->
+  <!-- ==========================================
+       EMAILJS
+  =========================================== -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- ==========================================
+       SUPABASE
+  =========================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 
 <body>
 
+<!-- ==========================================
+     NAVBAR
+=========================================== -->
+
 <header class="navbar">
-  <div class="logo">PEN<span>IFY</span></div>
+
+  <div class="logo">
+    PEN<span>IFY</span>
+  </div>
 
   <nav>
     <a href="#customise">Customise</a>
@@ -27,19 +47,26 @@
   </nav>
 
   <button id="cartButton" class="cart-button">
-    🛒 Cart <span id="cartCount">0</span>
+    🛒 Cart
+    <span id="cartCount">0</span>
   </button>
+
 </header>
 
 
 <main>
 
-<!-- HERO -->
+<!-- ==========================================
+     HERO
+=========================================== -->
+
 <section class="hero">
 
   <div class="hero-text">
 
-    <div class="badge">📚 BUILT FOR STUDENTS</div>
+    <div class="badge">
+      📚 BUILT FOR STUDENTS
+    </div>
 
     <h1>
       Your name.<br>
@@ -52,13 +79,21 @@
     </p>
 
     <div class="hero-buttons">
-      <a href="#customise" class="primary-button">
+
+      <a
+        href="#customise"
+        class="primary-button"
+      >
         Create Your Pen →
       </a>
 
-      <a href="#exam" class="secondary-button">
+      <a
+        href="#exam"
+        class="secondary-button"
+      >
         Why Exam Ready?
       </a>
+
     </div>
 
     <div class="hero-price">
@@ -73,13 +108,23 @@
 
     <div class="glow"></div>
 
-    <div class="pen hero-pen" id="heroPen">
+    <div
+      class="pen hero-pen"
+      id="heroPen"
+    >
+
       <div class="pen-tip"></div>
+
       <div class="pen-body">
-        <span id="heroName">YOUR NAME</span>
+        <span id="heroName">
+          YOUR NAME
+        </span>
       </div>
+
       <div class="pen-top"></div>
+
       <div class="clip"></div>
+
     </div>
 
   </div>
@@ -87,17 +132,29 @@
 </section>
 
 
-<!-- CUSTOMISER -->
-<section id="customise" class="section">
+<!-- ==========================================
+     CUSTOMISER
+=========================================== -->
+
+<section
+  id="customise"
+  class="section"
+>
 
   <div class="section-heading">
-    <div class="badge">✨ CUSTOMISE IT</div>
 
-    <h2>Make it yours.</h2>
+    <div class="badge">
+      ✨ CUSTOMISE IT
+    </div>
+
+    <h2>
+      Make it yours.
+    </h2>
 
     <p>
       Choose a colour and add your name.
     </p>
+
   </div>
 
 
@@ -109,22 +166,37 @@
         LIVE PREVIEW
       </div>
 
-      <div class="pen custom-pen" id="customPen">
+      <div
+        class="pen custom-pen"
+        id="customPen"
+      >
 
         <div class="pen-tip"></div>
 
         <div class="pen-body">
-          <span id="previewName">YOUR NAME</span>
+
+          <span id="previewName">
+            YOUR NAME
+          </span>
+
         </div>
 
         <div class="pen-top"></div>
+
         <div class="clip"></div>
 
       </div>
 
       <p class="selected-colour">
-        <span>Selected:</span>
-        <strong id="colourName">Electric Blue</strong>
+
+        <span>
+          Selected:
+        </span>
+
+        <strong id="colourName">
+          Electric Blue
+        </strong>
+
       </p>
 
     </div>
@@ -145,24 +217,109 @@
       >
 
 
-      <label>CHOOSE A COLOUR</label>
+      <label>
+        CHOOSE A COLOUR
+      </label>
 
       <div class="colour-grid">
 
-        <button class="colour active" data-colour="blue" style="--button-colour:#1687ff"></button>
-        <button class="colour" data-colour="purple" style="--button-colour:#8b5cf6"></button>
-        <button class="colour" data-colour="pink" style="--button-colour:#ff3b91"></button>
-        <button class="colour" data-colour="cyan" style="--button-colour:#00d9ff"></button>
-        <button class="colour" data-colour="teal" style="--button-colour:#14b8a6"></button>
-        <button class="colour" data-colour="green" style="--button-colour:#22c55e"></button>
-        <button class="colour" data-colour="lime" style="--button-colour:#a3e635"></button>
-        <button class="colour" data-colour="red" style="--button-colour:#ef4444"></button>
-        <button class="colour" data-colour="orange" style="--button-colour:#f97316"></button>
-        <button class="colour" data-colour="yellow" style="--button-colour:#facc15"></button>
-        <button class="colour" data-colour="lavender" style="--button-colour:#c4b5fd"></button>
-        <button class="colour" data-colour="white" style="--button-colour:#f8fafc"></button>
-        <button class="colour" data-colour="silver" style="--button-colour:#94a3b8"></button>
-        <button class="colour" data-colour="black" style="--button-colour:#171717"></button>
+        <button
+          class="colour active"
+          data-colour="blue"
+          style="--button-colour:#1687ff"
+          aria-label="Blue"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="purple"
+          style="--button-colour:#8b5cf6"
+          aria-label="Purple"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="pink"
+          style="--button-colour:#ff3b91"
+          aria-label="Pink"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="cyan"
+          style="--button-colour:#00d9ff"
+          aria-label="Cyan"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="teal"
+          style="--button-colour:#14b8a6"
+          aria-label="Teal"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="green"
+          style="--button-colour:#22c55e"
+          aria-label="Green"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="lime"
+          style="--button-colour:#a3e635"
+          aria-label="Lime"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="red"
+          style="--button-colour:#ef4444"
+          aria-label="Red"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="orange"
+          style="--button-colour:#f97316"
+          aria-label="Orange"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="yellow"
+          style="--button-colour:#facc15"
+          aria-label="Yellow"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="lavender"
+          style="--button-colour:#c4b5fd"
+          aria-label="Lavender"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="white"
+          style="--button-colour:#f8fafc"
+          aria-label="White"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="silver"
+          style="--button-colour:#94a3b8"
+          aria-label="Silver"
+        ></button>
+
+        <button
+          class="colour"
+          data-colour="black"
+          style="--button-colour:#171717"
+          aria-label="Black"
+        ></button>
 
       </div>
 
@@ -170,13 +327,27 @@
       <div class="pricing-box">
 
         <div>
-          <strong>1 personalised pen</strong>
-          <span>$3.00</span>
+
+          <strong>
+            1 personalised pen
+          </strong>
+
+          <span>
+            $3.00
+          </span>
+
         </div>
 
         <div class="deal">
-          <strong>🔥 Exam Bundle — 3 pens</strong>
-          <span>$6.00</span>
+
+          <strong>
+            🔥 Exam Bundle — 3 pens
+          </strong>
+
+          <span>
+            $6.00
+          </span>
+
         </div>
 
       </div>
@@ -184,17 +355,26 @@
 
       <div class="add-buttons">
 
-        <button id="addSingle" class="primary-button">
+        <button
+          id="addSingle"
+          class="primary-button"
+        >
           Add 1 Pen — $3
         </button>
 
-        <button id="addBundle" class="bundle-button">
+        <button
+          id="addBundle"
+          class="bundle-button"
+        >
           Add 3-Pen Bundle — $6
         </button>
 
       </div>
 
-      <p id="orderMessage" class="message"></p>
+      <p
+        id="orderMessage"
+        class="message"
+      ></p>
 
     </div>
 
@@ -203,8 +383,14 @@
 </section>
 
 
-<!-- EXAM ADVERTISEMENT -->
-<section id="exam" class="exam-section">
+<!-- ==========================================
+     EXAM SECTION
+=========================================== -->
+
+<section
+  id="exam"
+  class="exam-section"
+>
 
   <div class="exam-content">
 
@@ -246,7 +432,10 @@
 
     </div>
 
-    <a href="#customise" class="white-button">
+    <a
+      href="#customise"
+      class="white-button"
+    >
       Get Exam Ready →
     </a>
 
@@ -255,14 +444,24 @@
 </section>
 
 
-<!-- REVIEWS -->
-<section id="reviews" class="section">
+<!-- ==========================================
+     REVIEWS
+=========================================== -->
+
+<section
+  id="reviews"
+  class="section"
+>
 
   <div class="section-heading">
 
-    <div class="badge">⭐ STUDENT REVIEWS</div>
+    <div class="badge">
+      ⭐ STUDENT REVIEWS
+    </div>
 
-    <h2>What people are saying.</h2>
+    <h2>
+      What people are saying.
+    </h2>
 
     <p>
       Tried a Penify pen? Leave your review.
@@ -271,31 +470,80 @@
   </div>
 
 
-  <div id="reviewsContainer" class="reviews-grid">
-    <!-- Reviews added by JavaScript -->
+  <!-- REAL REVIEWS FROM SUPABASE -->
+
+  <div
+    id="reviewsContainer"
+    class="reviews-grid"
+  >
+    <p>
+      Loading reviews...
+    </p>
   </div>
 
 
+  <!-- REVIEW FORM -->
+
   <div class="review-form">
 
-    <h3>Leave a review</h3>
+    <h3>
+      Leave a review
+    </h3>
+
 
     <input
       id="reviewName"
       type="text"
       maxlength="30"
       placeholder="Your name"
+      autocomplete="off"
     >
 
-    <div class="star-selector">
 
-      <button data-rating="1">★</button>
-      <button data-rating="2">★</button>
-      <button data-rating="3">★</button>
-      <button data-rating="4">★</button>
-      <button data-rating="5">★</button>
+    <!-- STAR SELECTOR -->
+
+    <div
+      class="star-selector"
+      aria-label="Choose your rating"
+    >
+
+      <button
+        type="button"
+        data-rating="1"
+      >
+        ★
+      </button>
+
+      <button
+        type="button"
+        data-rating="2"
+      >
+        ★
+      </button>
+
+      <button
+        type="button"
+        data-rating="3"
+      >
+        ★
+      </button>
+
+      <button
+        type="button"
+        data-rating="4"
+      >
+        ★
+      </button>
+
+      <button
+        type="button"
+        data-rating="5"
+      >
+        ★
+      </button>
 
     </div>
+
 
     <textarea
       id="reviewText"
@@ -303,11 +551,40 @@
       placeholder="What do you think of your pen?"
     ></textarea>
 
-    <button id="submitReview" class="primary-button">
+
+    <!-- OPTIONAL IMAGE -->
+
+    <label
+      for="reviewImage"
+      class="review-image-label"
+    >
+      📷 Add a photo of your pen
+    </label>
+
+    <input
+      id="reviewImage"
+      type="file"
+      accept="image/png,image/jpeg,image/webp"
+    >
+
+    <small>
+      Optional. JPG, PNG or WebP.
+    </small>
+
+
+    <button
+      id="submitReview"
+      class="primary-button"
+      type="button"
+    >
       Submit Review
     </button>
 
-    <p id="reviewMessage" class="message"></p>
+
+    <p
+      id="reviewMessage"
+      class="message"
+    ></p>
 
   </div>
 
@@ -316,39 +593,73 @@
 </main>
 
 
-<!-- CART DRAWER -->
+<!-- ==========================================
+     CART DRAWER
+=========================================== -->
 
-<div id="cartOverlay" class="overlay"></div>
+<div
+  id="cartOverlay"
+  class="overlay"
+></div>
 
-<aside id="cart" class="cart">
+
+<aside
+  id="cart"
+  class="cart"
+>
 
   <div class="cart-header">
 
     <div>
-      <h2>Your Cart</h2>
-      <span id="cartSubtitle">0 items</span>
+
+      <h2>
+        Your Cart
+      </h2>
+
+      <span id="cartSubtitle">
+        0 items
+      </span>
+
     </div>
 
-    <button id="closeCart" class="close-button">
+    <button
+      id="closeCart"
+      class="close-button"
+      type="button"
+    >
       ×
     </button>
 
   </div>
 
 
-  <div id="cartItems" class="cart-items">
-    <!-- Cart items -->
+  <div
+    id="cartItems"
+    class="cart-items"
+  >
+    <!-- Cart items added by JavaScript -->
   </div>
 
 
   <div class="cart-footer">
 
     <div class="cart-total">
-      <span>Total</span>
-      <strong>$<span id="cartTotal">0.00</span></strong>
+
+      <span>
+        Total
+      </span>
+
+      <strong>
+        $<span id="cartTotal">0.00</span>
+      </strong>
+
     </div>
 
-    <button id="checkoutButton" class="primary-button checkout-button">
+    <button
+      id="checkoutButton"
+      class="primary-button checkout-button"
+      type="button"
+    >
       Checkout →
     </button>
 
@@ -357,13 +668,22 @@
 </aside>
 
 
-<!-- CHECKOUT MODAL -->
+<!-- ==========================================
+     CHECKOUT MODAL
+=========================================== -->
 
-<div id="checkoutModal" class="modal">
+<div
+  id="checkoutModal"
+  class="modal"
+>
 
   <div class="modal-box">
 
-    <button id="closeCheckout" class="modal-close">
+    <button
+      id="closeCheckout"
+      class="modal-close"
+      type="button"
+    >
       ×
     </button>
 
@@ -371,7 +691,9 @@
       📦 ORDER DETAILS
     </div>
 
-    <h2>Complete your order</h2>
+    <h2>
+      Complete your order
+    </h2>
 
     <p class="modal-description">
       Fill in your details and we'll receive your order by email.
@@ -380,41 +702,77 @@
 
     <form id="orderForm">
 
-      <input type="hidden" name="order_items" id="emailOrderItems">
-      <input type="hidden" name="order_total" id="emailOrderTotal">
+      <!-- Hidden EmailJS fields -->
 
-      <label>Full Name</label>
       <input
+        type="hidden"
+        name="order_items"
+        id="emailOrderItems"
+      >
+
+      <input
+        type="hidden"
+        name="order_total"
+        id="emailOrderTotal"
+      >
+
+
+      <label for="customerName">
+        Full Name
+      </label>
+
+      <input
+        id="customerName"
         type="text"
         name="customer_name"
         required
         placeholder="Your full name"
       >
 
-      <label>Email</label>
+
+      <label for="customerEmail">
+        Email
+      </label>
+
       <input
+        id="customerEmail"
         type="email"
         name="customer_email"
         required
         placeholder="you@example.com"
       >
 
-      <label>Phone</label>
+
+      <label for="customerPhone">
+        Phone
+      </label>
+
       <input
+        id="customerPhone"
         type="tel"
         name="customer_phone"
         placeholder="Phone number"
       >
 
-      <label>Delivery Address</label>
+
+      <label for="customerAddress">
+        Delivery Address
+      </label>
+
       <textarea
+        id="customerAddress"
         name="customer_address"
         required
         placeholder="Where should the order be delivered?"
       ></textarea>
 
-      <label>Order Notes</label>
+
+      <label for="orderNotes">
+        Order Notes
+      </label>
+
       <textarea
+        id="orderNotes"
         name="order_notes"
         placeholder="Anything else we should know?"
       ></textarea>
@@ -422,23 +780,33 @@
 
       <div class="checkout-summary">
 
-        <strong>Order</strong>
+        <strong>
+          Order
+        </strong>
 
         <p id="checkoutSummary"></p>
 
         <div>
           Total:
-          <strong>$<span id="checkoutTotal">0.00</span></strong>
+          <strong>
+            $<span id="checkoutTotal">0.00</span>
+          </strong>
         </div>
 
       </div>
 
 
-      <button type="submit" class="primary-button submit-order">
+      <button
+        type="submit"
+        class="primary-button submit-order"
+      >
         Place Order →
       </button>
 
-      <p id="checkoutMessage" class="message"></p>
+      <p
+        id="checkoutMessage"
+        class="message"
+      ></p>
 
     </form>
 
@@ -447,9 +815,15 @@
 </div>
 
 
+<!-- ==========================================
+     FOOTER
+=========================================== -->
+
 <footer>
 
-  <div class="logo">PEN<span>IFY</span></div>
+  <div class="logo">
+    PEN<span>IFY</span>
+  </div>
 
   <p>
     Personalised pens for students.
@@ -461,6 +835,19 @@
 
 </footer>
 
+
+<!-- ==========================================
+     SUPABASE CONFIGURATION
+     
+     IMPORTANT:
+     Put your Supabase URL and PUBLISHABLE
+     KEY in script.js, NOT here.
+=========================================== -->
+
+
+<!-- ==========================================
+     YOUR WEBSITE JAVASCRIPT
+=========================================== -->
 
 <script src="script.js"></script>
 
