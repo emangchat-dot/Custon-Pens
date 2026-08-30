@@ -3,531 +3,466 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penify — Personalised Pens</title>
 
-  <title>InkCraft | Customisable Pens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
+<header class="navbar">
+  <div class="logo">PEN<span>IFY</span></div>
 
-    <a href="#home" class="logo">
-      INK<span>CRAFT</span>
-    </a>
+  <nav>
+    <a href="#customise">Customise</a>
+    <a href="#exam">Exam Ready</a>
+    <a href="#reviews">Reviews</a>
+  </nav>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#customise">Customise</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#about">About</a>
-    </nav>
+  <button id="cartButton" class="cart-button">
+    🛒 Cart <span id="cartCount">0</span>
+  </button>
+</header>
 
-    <a href="#customise" class="nav-button">
-      Create Yours
-    </a>
 
-  </header>
+<main>
 
+<!-- HERO -->
+<section class="hero">
 
-  <main>
+  <div class="hero-text">
 
-    <!-- HERO -->
-    <section id="home" class="hero">
+    <div class="badge">📚 BUILT FOR STUDENTS</div>
 
-      <div class="hero-text">
+    <h1>
+      Your name.<br>
+      <span>Your pen.</span>
+    </h1>
 
-        <p class="eyebrow">
-          YOUR NAME. YOUR COLOURS. YOUR PEN.
-        </p>
+    <p>
+      Personalise your pen with your name and choose your favourite colour.
+      Perfect for school, studying and exams.
+    </p>
 
-        <h1>
-          Make a pen
-          <br>
-          <span>that is yours.</span>
-        </h1>
-
-        <p class="hero-description">
-          Design your own personalised pen. Choose your colour,
-          add your name and create something completely unique.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#customise" class="primary-button">
-            Customise a Pen →
-          </a>
-
-          <a href="#how-it-works" class="secondary-button">
-            See how it works
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- HERO PEN -->
-      <div class="hero-visual">
-
-        <div class="pen-card">
-
-          <div class="pen hero-pen" id="heroPen">
-
-            <div class="pen-tip"></div>
-
-            <div class="pen-body"></div>
-
-            <div class="pen-grip"></div>
-
-            <div class="pen-name">
-              YOUR NAME
-            </div>
-
-            <div class="pen-clip"></div>
-
-            <div class="pen-cap"></div>
-
-          </div>
-
-          <div class="sparkle sparkle-one">✦</div>
-          <div class="sparkle sparkle-two">✦</div>
-
-          <p>Made by you.</p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- CUSTOMISER -->
-    <section id="customise" class="customiser-section">
-
-      <div class="section-heading">
-
-        <p class="eyebrow">
-          DESIGN STUDIO
-        </p>
-
-        <h2>
-          Build your pen
-        </h2>
-
-        <p>
-          Choose your colour and add your name.
-        </p>
-
-      </div>
-
-
-      <div class="customiser">
-
-
-        <!-- PREVIEW -->
-        <div class="preview-panel">
-
-          <div class="preview-top">
-
-            <div class="preview-label">
-              LIVE PREVIEW
-            </div>
-
-            <span id="colourName">
-              Electric Blue
-            </span>
-
-          </div>
-
-
-          <div class="preview-stage">
-
-            <div
-              class="pen large-pen"
-              id="customPen"
-            >
-
-              <div class="pen-tip"></div>
-
-              <div class="pen-body"></div>
-
-              <div class="pen-grip"></div>
-
-              <div
-                class="pen-name"
-                id="previewName"
-              >
-                YOUR NAME
-              </div>
-
-              <div class="pen-clip"></div>
-
-              <div class="pen-cap"></div>
-
-            </div>
-
-          </div>
-
-
-          <div class="price-row">
-
-            <span>
-              Personalised pen
-            </span>
-
-            <strong>
-              $5.00
-            </strong>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- CONTROLS -->
-        <div class="controls">
-
-
-          <!-- NAME -->
-          <div class="control-group">
-
-            <label for="name">
-              1. Add your name
-            </label>
-
-            <input
-              id="name"
-              type="text"
-              maxlength="14"
-              placeholder="e.g. Emanuel"
-              autocomplete="off"
-            >
-
-            <small>
-              Up to 14 characters.
-            </small>
-
-          </div>
-
-
-
-          <!-- COLOURS -->
-          <div class="control-group">
-
-            <label>
-              2. Choose your colour
-            </label>
-
-            <div class="colour-grid">
-
-              <button
-                class="colour active"
-                data-colour="blue"
-                aria-label="Electric Blue">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="purple"
-                aria-label="Purple">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="pink"
-                aria-label="Hot Pink">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="cyan"
-                aria-label="Cyan">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="teal"
-                aria-label="Teal">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="green"
-                aria-label="Green">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="lime"
-                aria-label="Lime">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="red"
-                aria-label="Red">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="orange"
-                aria-label="Orange">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="yellow"
-                aria-label="Yellow">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="lavender"
-                aria-label="Lavender">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="white"
-                aria-label="Pearl White">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="silver"
-                aria-label="Silver">
-              </button>
-
-              <button
-                class="colour"
-                data-colour="black"
-                aria-label="Midnight Black">
-              </button>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- INK -->
-          <div class="control-group">
-
-            <label>
-              3. Ink colour
-            </label>
-
-            <div class="fixed-ink">
-
-              <span class="ink-dot"></span>
-
-              <div>
-
-                <strong>
-                  Black ink
-                </strong>
-
-                <small>
-                  Classic black ink included
-                </small>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- ORDER -->
-          <div class="order-box">
-
-            <div>
-
-              <span>
-                Personalised pen
-              </span>
-
-              <strong>
-                $5.00
-              </strong>
-
-            </div>
-
-            <button
-              id="orderButton"
-              class="primary-button full-width"
-            >
-              Add to Order
-            </button>
-
-            <p
-              id="orderMessage"
-              class="order-message"
-            ></p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- HOW IT WORKS -->
-    <section
-      id="how-it-works"
-      class="steps-section"
-    >
-
-      <div class="section-heading">
-
-        <p class="eyebrow">
-          SIMPLE AS 1, 2, 3
-        </p>
-
-        <h2>
-          How it works
-        </h2>
-
-      </div>
-
-
-      <div class="steps">
-
-        <article>
-
-          <span>
-            01
-          </span>
-
-          <h3>
-            Choose your style
-          </h3>
-
-          <p>
-            Pick the pen colour that matches your style.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            02
-          </span>
-
-          <h3>
-            Add your name
-          </h3>
-
-          <p>
-            Enter your name or any word you want on your pen.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            03
-          </span>
-
-          <h3>
-            Make it yours
-          </h3>
-
-          <p>
-            Place your order and get your personalised pen.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ABOUT -->
-    <section
-      id="about"
-      class="about-section"
-    >
-
-      <div>
-
-        <p class="eyebrow">
-          WHY INKCRAFT?
-        </p>
-
-        <h2>
-          A little more personality
-          for your pencil case.
-        </h2>
-
-      </div>
-
-      <p>
-        We believe stationery doesn't have to be boring.
-        Our pens are designed to be colourful, personal
-        and practical — perfect for school, gifts and
-        everyday writing.
-      </p>
-
-    </section>
-
-
-
-    <!-- CTA -->
-    <section class="cta-section">
-
-      <h2>
-        Ready to make yours?
-      </h2>
-
-      <a
-        href="#customise"
-        class="primary-button"
-      >
-        Design My Pen →
+    <div class="hero-buttons">
+      <a href="#customise" class="primary-button">
+        Create Your Pen →
       </a>
 
-    </section>
-
-  </main>
-
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <div class="logo">
-      INK<span>CRAFT</span>
+      <a href="#exam" class="secondary-button">
+        Why Exam Ready?
+      </a>
     </div>
 
-    <p>
-      Personalised stationery made your way.
-    </p>
+    <div class="hero-price">
+      <strong>$3</strong>
+      <span>per personalised pen</span>
+    </div>
+
+  </div>
+
+
+  <div class="hero-visual">
+
+    <div class="glow"></div>
+
+    <div class="pen hero-pen" id="heroPen">
+      <div class="pen-tip"></div>
+      <div class="pen-body">
+        <span id="heroName">YOUR NAME</span>
+      </div>
+      <div class="pen-top"></div>
+      <div class="clip"></div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CUSTOMISER -->
+<section id="customise" class="section">
+
+  <div class="section-heading">
+    <div class="badge">✨ CUSTOMISE IT</div>
+
+    <h2>Make it yours.</h2>
 
     <p>
-      © <span id="year"></span> InkCraft.
-      All rights reserved.
+      Choose a colour and add your name.
+    </p>
+  </div>
+
+
+  <div class="customiser">
+
+    <div class="preview-card">
+
+      <div class="preview-title">
+        LIVE PREVIEW
+      </div>
+
+      <div class="pen custom-pen" id="customPen">
+
+        <div class="pen-tip"></div>
+
+        <div class="pen-body">
+          <span id="previewName">YOUR NAME</span>
+        </div>
+
+        <div class="pen-top"></div>
+        <div class="clip"></div>
+
+      </div>
+
+      <p class="selected-colour">
+        <span>Selected:</span>
+        <strong id="colourName">Electric Blue</strong>
+      </p>
+
+    </div>
+
+
+    <div class="controls">
+
+      <label for="name">
+        YOUR NAME
+      </label>
+
+      <input
+        id="name"
+        type="text"
+        maxlength="20"
+        placeholder="Enter your name"
+        autocomplete="off"
+      >
+
+
+      <label>CHOOSE A COLOUR</label>
+
+      <div class="colour-grid">
+
+        <button class="colour active" data-colour="blue" style="--button-colour:#1687ff"></button>
+        <button class="colour" data-colour="purple" style="--button-colour:#8b5cf6"></button>
+        <button class="colour" data-colour="pink" style="--button-colour:#ff3b91"></button>
+        <button class="colour" data-colour="cyan" style="--button-colour:#00d9ff"></button>
+        <button class="colour" data-colour="teal" style="--button-colour:#14b8a6"></button>
+        <button class="colour" data-colour="green" style="--button-colour:#22c55e"></button>
+        <button class="colour" data-colour="lime" style="--button-colour:#a3e635"></button>
+        <button class="colour" data-colour="red" style="--button-colour:#ef4444"></button>
+        <button class="colour" data-colour="orange" style="--button-colour:#f97316"></button>
+        <button class="colour" data-colour="yellow" style="--button-colour:#facc15"></button>
+        <button class="colour" data-colour="lavender" style="--button-colour:#c4b5fd"></button>
+        <button class="colour" data-colour="white" style="--button-colour:#f8fafc"></button>
+        <button class="colour" data-colour="silver" style="--button-colour:#94a3b8"></button>
+        <button class="colour" data-colour="black" style="--button-colour:#171717"></button>
+
+      </div>
+
+
+      <div class="pricing-box">
+
+        <div>
+          <strong>1 personalised pen</strong>
+          <span>$3.00</span>
+        </div>
+
+        <div class="deal">
+          <strong>🔥 Exam Bundle — 3 pens</strong>
+          <span>$6.00</span>
+        </div>
+
+      </div>
+
+
+      <div class="add-buttons">
+
+        <button id="addSingle" class="primary-button">
+          Add 1 Pen — $3
+        </button>
+
+        <button id="addBundle" class="bundle-button">
+          Add 3-Pen Bundle — $6
+        </button>
+
+      </div>
+
+      <p id="orderMessage" class="message"></p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EXAM ADVERTISEMENT -->
+<section id="exam" class="exam-section">
+
+  <div class="exam-content">
+
+    <div class="badge light-badge">
+      🎯 EXAM READY
+    </div>
+
+    <h2>
+      One pen.<br>
+      <span>Ready for every question.</span>
+    </h2>
+
+    <p>
+      Don't wait until exam day to find your favourite pen.
+      Get a personalised pen you already know and love.
     </p>
 
-  </footer>
+    <div class="exam-points">
+
+      <div>
+        <span>✓</span>
+        Comfortable for long study sessions
+      </div>
+
+      <div>
+        <span>✓</span>
+        Easy to identify as yours
+      </div>
+
+      <div>
+        <span>✓</span>
+        Great for school and exams
+      </div>
+
+      <div>
+        <span>✓</span>
+        Only $3 each
+      </div>
+
+    </div>
+
+    <a href="#customise" class="white-button">
+      Get Exam Ready →
+    </a>
+
+  </div>
+
+</section>
 
 
-  <script src="script.js"></script>
+<!-- REVIEWS -->
+<section id="reviews" class="section">
+
+  <div class="section-heading">
+
+    <div class="badge">⭐ STUDENT REVIEWS</div>
+
+    <h2>What people are saying.</h2>
+
+    <p>
+      Tried a Penify pen? Leave your review.
+    </p>
+
+  </div>
+
+
+  <div id="reviewsContainer" class="reviews-grid">
+    <!-- Reviews added by JavaScript -->
+  </div>
+
+
+  <div class="review-form">
+
+    <h3>Leave a review</h3>
+
+    <input
+      id="reviewName"
+      type="text"
+      maxlength="30"
+      placeholder="Your name"
+    >
+
+    <div class="star-selector">
+
+      <button data-rating="1">★</button>
+      <button data-rating="2">★</button>
+      <button data-rating="3">★</button>
+      <button data-rating="4">★</button>
+      <button data-rating="5">★</button>
+
+    </div>
+
+    <textarea
+      id="reviewText"
+      maxlength="250"
+      placeholder="What do you think of your pen?"
+    ></textarea>
+
+    <button id="submitReview" class="primary-button">
+      Submit Review
+    </button>
+
+    <p id="reviewMessage" class="message"></p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- CART DRAWER -->
+
+<div id="cartOverlay" class="overlay"></div>
+
+<aside id="cart" class="cart">
+
+  <div class="cart-header">
+
+    <div>
+      <h2>Your Cart</h2>
+      <span id="cartSubtitle">0 items</span>
+    </div>
+
+    <button id="closeCart" class="close-button">
+      ×
+    </button>
+
+  </div>
+
+
+  <div id="cartItems" class="cart-items">
+    <!-- Cart items -->
+  </div>
+
+
+  <div class="cart-footer">
+
+    <div class="cart-total">
+      <span>Total</span>
+      <strong>$<span id="cartTotal">0.00</span></strong>
+    </div>
+
+    <button id="checkoutButton" class="primary-button checkout-button">
+      Checkout →
+    </button>
+
+  </div>
+
+</aside>
+
+
+<!-- CHECKOUT MODAL -->
+
+<div id="checkoutModal" class="modal">
+
+  <div class="modal-box">
+
+    <button id="closeCheckout" class="modal-close">
+      ×
+    </button>
+
+    <div class="badge">
+      📦 ORDER DETAILS
+    </div>
+
+    <h2>Complete your order</h2>
+
+    <p class="modal-description">
+      Fill in your details and we'll receive your order by email.
+    </p>
+
+
+    <form id="orderForm">
+
+      <input type="hidden" name="order_items" id="emailOrderItems">
+      <input type="hidden" name="order_total" id="emailOrderTotal">
+
+      <label>Full Name</label>
+      <input
+        type="text"
+        name="customer_name"
+        required
+        placeholder="Your full name"
+      >
+
+      <label>Email</label>
+      <input
+        type="email"
+        name="customer_email"
+        required
+        placeholder="you@example.com"
+      >
+
+      <label>Phone</label>
+      <input
+        type="tel"
+        name="customer_phone"
+        placeholder="Phone number"
+      >
+
+      <label>Delivery Address</label>
+      <textarea
+        name="customer_address"
+        required
+        placeholder="Where should the order be delivered?"
+      ></textarea>
+
+      <label>Order Notes</label>
+      <textarea
+        name="order_notes"
+        placeholder="Anything else we should know?"
+      ></textarea>
+
+
+      <div class="checkout-summary">
+
+        <strong>Order</strong>
+
+        <p id="checkoutSummary"></p>
+
+        <div>
+          Total:
+          <strong>$<span id="checkoutTotal">0.00</span></strong>
+        </div>
+
+      </div>
+
+
+      <button type="submit" class="primary-button submit-order">
+        Place Order →
+      </button>
+
+      <p id="checkoutMessage" class="message"></p>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <div class="logo">PEN<span>IFY</span></div>
+
+  <p>
+    Personalised pens for students.
+  </p>
+
+  <p>
+    © <span id="year"></span> Penify
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
