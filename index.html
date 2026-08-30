@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your own personalised pen.">
+  <title>InkCraft | Customisable Pens</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <a class="logo" href="#home">INK<span>CRAFT</span></a>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#customise">Customise</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <a class="nav-button" href="#customise">Create Yours</a>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+
+  <div class="hero-text">
+    <p class="eyebrow">YOUR NAME. YOUR COLOURS. YOUR PEN.</p>
+
+    <h1>
+      Make a pen<br>
+      <span>that is yours.</span>
+    </h1>
+
+    <p class="hero-description">
+      Design a personalised pen for school, study, work or just because.
+      Choose your colours and add your name to make it completely yours.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="primary-button" href="#customise">
+        Customise a Pen →
+      </a>
+
+      <a class="secondary-button" href="#how-it-works">
+        See how it works
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="pen-card">
+
+      <div class="pen" id="heroPen">
+        <div class="pen-tip"></div>
+        <div class="pen-body"></div>
+        <div class="pen-grip"></div>
+        <div class="pen-name">YOUR NAME</div>
+        <div class="pen-clip"></div>
+        <div class="pen-cap"></div>
+      </div>
+
+      <p>Made by you.</p>
+
+    </div>
+  </div>
+
+</section>
+
+
+<section id="customise" class="customiser-section">
+
+  <div class="section-heading">
+    <p class="eyebrow">DESIGN STUDIO</p>
+    <h2>Build your pen</h2>
+    <p>Change the options and see your design instantly.</p>
+  </div>
+
+  <div class="customiser">
+
+    <div class="preview-panel">
+
+      <div class="preview-label">
+        LIVE PREVIEW
+      </div>
+
+      <div class="preview-stage">
+
+        <div class="pen large-pen" id="customPen">
+
+          <div class="pen-tip"></div>
+          <div class="pen-body"></div>
+          <div class="pen-grip"></div>
+
+          <div class="pen-name" id="previewName">
+            YOUR NAME
+          </div>
+
+          <div class="pen-clip"></div>
+          <div class="pen-cap"></div>
+
+        </div>
+
+      </div>
+
+      <div class="price-row">
+        <span>Your personalised pen</span>
+        <strong>$5.00</strong>
+      </div>
+
+    </div>
+
+
+    <div class="controls">
+
+      <div class="control-group">
+
+        <label for="name">
+          1. Add your name
+        </label>
+
+        <input
+          id="name"
+          type="text"
+          maxlength="14"
+          placeholder="e.g. Emanuel"
+          autocomplete="off"
+        >
+
+        <small>
+          Up to 14 characters.
+        </small>
+
+      </div>
+
+
+      <div class="control-group">
+
+        <label>
+          2. Choose a colour
+        </label>
+
+        <div class="colour-grid">
+
+          <button
+            class="colour active"
+            data-colour="blue"
+            aria-label="Blue">
+          </button>
+
+          <button
+            class="colour"
+            data-colour="purple"
+            aria-label="Purple">
+          </button>
+
+          <button
+            class="colour"
+            data-colour="green"
+            aria-label="Green">
+          </button>
+
+          <button
+            class="colour"
+            data-colour="red"
+            aria-label="Red">
+          </button>
+
+          <button
+            class="colour"
+            data-colour="orange"
+            aria-label="Orange">
+          </button>
+
+          <button
+            class="colour"
+            data-colour="black"
+            aria-label="Black">
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="control-group">
+
+        <label for="ink">
+          3. Ink colour
+        </label>
+
+        <select id="ink">
+
+          <option value="blue">
+            Blue ink
+          </option>
+
+          <option value="black">
+            Black ink
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="order-box">
+
+        <div>
+          <span>Personalised pen</span>
+          <strong>$5.00</strong>
+        </div>
+
+        <button
+          id="orderButton"
+          class="primary-button full-width">
+          Add to Order
+        </button>
+
+        <p id="orderMessage" class="order-message"></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="how-it-works" class="steps-section">
+
+  <div class="section-heading">
+
+    <p class="eyebrow">
+      SIMPLE AS 1, 2, 3
+    </p>
+
+    <h2>How it works</h2>
+
+  </div>
+
+
+  <div class="steps">
+
+    <article>
+
+      <span>01</span>
+
+      <h3>Choose your style</h3>
+
+      <p>
+        Pick the colour and ink style you like.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>02</span>
+
+      <h3>Add your name</h3>
+
+      <p>
+        Enter the name or word you want on your pen.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>03</span>
+
+      <h3>Make it yours</h3>
+
+      <p>
+        Place your order and your personalised pen is ready to go.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<section id="about" class="about-section">
+
+  <div>
+
+    <p class="eyebrow">
+      WHY INKCRAFT?
+    </p>
+
+    <h2>
+      A little more personality
+      for your pencil case.
+    </h2>
+
+  </div>
+
+  <p>
+    We believe stationery doesn't have to be boring.
+    Our pens are designed to be fun, personal and practical —
+    perfect for students, gifts and everyday writing.
+  </p>
+
+</section>
+
+
+<section class="cta-section">
+
+  <h2>Ready to make yours?</h2>
+
+  <a class="primary-button" href="#customise">
+    Design My Pen →
+  </a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="logo">
+    INK<span>CRAFT</span>
+  </div>
+
+  <p>
+    Personalised stationery made your way.
+  </p>
+
+  <p>
+    © <span id="year"></span> InkCraft.
+    All rights reserved.
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
