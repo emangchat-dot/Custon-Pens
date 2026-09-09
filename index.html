@@ -27,7 +27,69 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 </head>
+<!-- 🎵 PENIFY MUSIC -->
+<div id="music-player">
+    <button id="music-toggle" aria-label="Toggle music">
+        🎵 Music: OFF
+    </button>
 
+    <audio id="penify-music" loop>
+        <source src="leberch-study-580088.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<style>
+#music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+#music-toggle {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 30px;
+    background: rgba(20, 20, 30, 0.9);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    transition: 0.25s ease;
+}
+
+#music-toggle:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+#music-toggle:active {
+    transform: scale(0.96);
+}
+</style>
+
+<script>
+const music = document.getElementById("penify-music");
+const musicButton = document.getElementById("music-toggle");
+
+music.volume = 0.25;
+
+musicButton.addEventListener("click", () => {
+    if (music.paused) {
+        music.play()
+            .then(() => {
+                musicButton.textContent = "🎵 Music: ON";
+            })
+            .catch(() => {
+                musicButton.textContent = "⚠️ Tap again";
+            });
+    } else {
+        music.pause();
+        musicButton.textContent = "🎵 Music: OFF";
+    }
+});
+</script>
 <body>
 
 <!-- ==========================================
